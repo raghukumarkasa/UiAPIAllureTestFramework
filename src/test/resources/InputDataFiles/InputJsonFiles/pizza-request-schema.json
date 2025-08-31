@@ -1,0 +1,11 @@
+{
+  "maxCaloriesPerSlice": 800,
+  "mustBeVegetarian": true,
+  "excludedIngredients": [
+    "anchovies",
+    "bacon"
+  ],
+  "excludedTools": [],
+  "maxNumberOfToppings": 4,
+  "minNumberOfToppings": 2
+}

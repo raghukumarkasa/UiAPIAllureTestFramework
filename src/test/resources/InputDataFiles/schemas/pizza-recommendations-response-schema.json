@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PizzaRecommendation",
+  "type": "object",
+  "properties": {
+    "pizza": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "dough": {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "caloriesPerSlice": {
+              "type": "integer"
+            }
+          },
+          "required": ["ID", "name", "caloriesPerSlice"]
+        },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "caloriesPerSlice": {
+                "type": "integer"
+              },
+              "vegetarian": {
+                "type": "boolean"
+              }
+            },
+            "required": ["ID", "name", "caloriesPerSlice", "vegetarian"]
+          }
+        },
+        "tool": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "name", "dough", "ingredients", "tool"]
+    },
+    "calories": {
+      "type": "integer"
+    },
+    "vegetarian": {
+      "type": "boolean"
+    }
+  },
+  "required": ["pizza", "calories", "vegetarian"]
+}
