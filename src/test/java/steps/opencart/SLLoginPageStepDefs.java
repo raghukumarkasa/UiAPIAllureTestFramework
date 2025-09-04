@@ -1,4 +1,4 @@
-package org.opencart.stepdefs;
+package steps.opencart;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

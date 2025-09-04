@@ -1,4 +1,4 @@
-package org.opencart.stepdefs;
+package steps.opencart;
 
 
 import org.junit.After;

@@ -95,6 +95,13 @@
       <artifactId>json-schema-validator</artifactId>
       <version>5.5.5</version> <!-- Use latest version as per your needs -->
     </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+      <dependency>
+          <groupId>org.yaml</groupId>
+          <artifactId>snakeyaml</artifactId>
+          <version>2.4</version>
+      </dependency>
   </dependencies>
 
   <build>
