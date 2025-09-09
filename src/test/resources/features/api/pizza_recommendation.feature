@@ -1,3 +1,4 @@
+@API
 Feature: Pizza Recommendation API
 
   @Smoke

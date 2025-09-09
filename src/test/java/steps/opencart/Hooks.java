@@ -35,7 +35,7 @@ public class Hooks {
 //        return new byte[0];
 //    }
 
-    @AfterStep
+    @AfterStep("@UI")
     public void afterEachStep(Scenario scenario){
         if (scenario.isFailed()) {
             LoggerPrinter.print("Step failed inside: " + scenario.getName(), OutputMode.BOTH);
@@ -49,7 +49,7 @@ public class Hooks {
     }
 
 
-    @After
+    @After("@UI")
     public void afterEach(Scenario scenario) {
         DriverManager.quitDriver();
     }

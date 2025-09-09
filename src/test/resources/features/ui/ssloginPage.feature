@@ -1,4 +1,5 @@
-  Feature: Login functionality for Swag Labs Open Cart
+@UI
+Feature: Login functionality for Swag Labs Open Cart
 
   As a user of the Swag Labs OpenCart website
   I want to be able to login with my account
