@@ -5,7 +5,6 @@ target/
 *.log
 *.class
 *.jar
-src/test/resources/config.yaml
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
