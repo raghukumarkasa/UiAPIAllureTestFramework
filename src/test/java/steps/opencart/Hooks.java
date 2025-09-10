@@ -1,10 +1,9 @@
-package org.opencart.stepdefs;
+package steps.opencart;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.DriverManager;
@@ -36,7 +35,7 @@ public class Hooks {
 //        return new byte[0];
 //    }
 
-    @AfterStep
+    @AfterStep("@UI")
     public void afterEachStep(Scenario scenario){
         if (scenario.isFailed()) {
             LoggerPrinter.print("Step failed inside: " + scenario.getName(), OutputMode.BOTH);
@@ -50,7 +49,7 @@ public class Hooks {
     }
 
 
-    @After
+    @After("@UI")
     public void afterEach(Scenario scenario) {
         DriverManager.quitDriver();
     }

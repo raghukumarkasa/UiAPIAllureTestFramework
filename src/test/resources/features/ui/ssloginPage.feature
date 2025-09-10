@@ -1,3 +1,4 @@
+@UI
 Feature: Login functionality for Swag Labs Open Cart
 
   As a user of the Swag Labs OpenCart website
@@ -7,11 +8,13 @@ Feature: Login functionality for Swag Labs Open Cart
   Background:
     Given I am on the Swag Labs login page
 
+  @Smoke
   Scenario: Successful login with valid credentials
     Given I have entered a valid username and password
     When I click on the login button
     Then I should be logged in successfully
 
+  @Negative
   Scenario Outline: Login unsuccesful with invalid credentials
     Given I have entered an invalid "<UserName>" and "<Password>"
     When I click on the login button

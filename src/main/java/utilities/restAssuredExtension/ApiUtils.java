@@ -7,8 +7,6 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import io.qameta.allure.Allure;
 
 import java.io.ByteArrayInputStream;
@@ -38,9 +36,9 @@ public class ApiUtils {
         return response;
     }
 
-    public static Map<String, String> generateAuthToken() {
+    public static Map<String, String> generateAuthToken(String token) {
         Map<String, String> authHeaders = new HashMap<String, String>();
-        authHeaders.put("Authorization", "Bearer Tp8VQAfLbPdJqxMl");
+        authHeaders.put("Authorization", "Bearer "+token);
         return authHeaders;
     }
 
