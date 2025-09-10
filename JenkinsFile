@@ -16,7 +16,7 @@ pipeline (
             steps {
                 script{
                     withCredentials ([
-                        string(credentialsId: "QP_API_TOKEN_PASSWORD", variable: 'API_TOKEN_PASSWORD')
+                        string(credentialsId: "QP_API_TOKEN_PASSWORD", variable: 'API_TOKEN_PASSWORD'),
                         string(credentialsId: "QP_API_TOKEN_USERNAME", variable: 'API_TOKEN_USERNAME')
                     ]) {
 
