@@ -11,6 +11,7 @@ Feature: Pizza Recommendation API
     |id|
     |1|
     |47|
+
   @Smoke @Regression
   Scenario: Post a user's Pizza need to get a recommendation
     When I send a POST request to "/api/pizza" with body as "pizza-request-schema.json"
