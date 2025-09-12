@@ -37,11 +37,13 @@ pipeline {
 
         stage('Run Automation Suite') {
             steps {
-                // Example: use Maven for Java test execution (update command if needed)
-                if (isUnix()) {
-                    sh 'mvn clean test'
-                } else {
-                    bat 'mvn clean test'
+                script {
+                    // Example: use Maven for Java test execution (update command if needed)
+                    if (isUnix()) {
+                        sh 'mvn clean test'
+                    } else {
+                        bat 'mvn clean test'
+                    }
                 }
             }
         }
