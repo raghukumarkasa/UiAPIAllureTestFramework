@@ -19,17 +19,12 @@ pipeline {
                         string(credentialsId: "QP_API_TOKEN_PASSWORD", variable: 'API_TOKEN_PASSWORD'),
                         string(credentialsId: "QP_API_TOKEN_USERNAME", variable: 'API_TOKEN_USERNAME')
                     ]) {
-
                             // Load the YAML config as text
                             def yamlText = readFile("${env.YAML_PATH}")
-
                             // Replace placeholders with secrets
                             yamlText = yamlText
                                         .replaceAll('\\$\\{QP_API_TOKEN_PASSWORD}',API_TOKEN_PASSWORD)
                                         .replaceAll('\\$\\{QP_API_TOKEN_USERNAME}',API_TOKEN_USERNAME)
-
-                            echo "Injected YAML content:\n${yamlText}"
-
                             //Overwrite the YAML file
                             writeFile file: "${env.YAML_PATH}", text: yamlText
                         }

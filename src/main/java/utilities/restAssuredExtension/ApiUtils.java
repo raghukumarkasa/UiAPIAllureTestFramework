@@ -28,7 +28,7 @@ public class ApiUtils {
 
         try {
             response = performRequest("GET",baseUri, endPoint, headers, pathParams, queryParams, null);
-            LoggerPrinter.print("Received Response : " + response.toString(),OutputMode.DEBUG);
+            //LoggerPrinter.print("Received Response : " + response.toString(),OutputMode.DEBUG);
         } catch (Exception e) {
             LoggerPrinter.print("Error during GET:"+e.getMessage(),OutputMode.LOG);
             throw new FrameworkException("GET request failed",e);
@@ -47,7 +47,6 @@ public class ApiUtils {
         Response response;
         try {
             response =  performRequest("POST",baseUri, endPoint, headers, null,null, body);
-            LoggerPrinter.print("Received Response : " + response.toString(),OutputMode.DEBUG);
         } catch (Exception e) {
             LoggerPrinter.print("Error during POST:"+e.getMessage(),OutputMode.LOG);
             throw new FrameworkException("POST Request failed",e);
@@ -85,8 +84,6 @@ public class ApiUtils {
         } catch (Exception e) {
             throw new FrameworkException("Error while executing API ",e);
         }
-//            Allure.addAttachment("API/Request","text/plain", new ByteArrayInputStream(specLogger.getRequestData().getBytes(StandardCharsets.UTF_8)),".txt");
-//            Allure.addAttachment("API/Response","text/plain", new ByteArrayInputStream(specLogger.getResponseData().getBytes(StandardCharsets.UTF_8)),".txt");
         Allure.addAttachment("API/Request","text/plain", new ByteArrayInputStream(buildRequestLog(method, baseUri, endPoint, headers, pathParams, queryParams, (body == null ? "No Body" : GenericUtils.prettyPrintJsonFromMap(body))).getBytes(StandardCharsets.UTF_8)),".txt");
         Allure.addAttachment("API/Response","text/plain", new ByteArrayInputStream(buildResponseLog(response).getBytes(StandardCharsets.UTF_8)),".txt");
 

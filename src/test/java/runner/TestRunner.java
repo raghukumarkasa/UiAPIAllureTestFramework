@@ -5,7 +5,6 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(features = "src/test/resources/features",
-        //glue = {"steps.opencart"},
         glue = {"steps"},
         tags = "@Smoke",
         //plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber.json"},

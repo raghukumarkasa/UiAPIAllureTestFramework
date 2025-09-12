@@ -19,7 +19,6 @@ public class PizzaRecommendationSteps {
     private static final String BASE_URL = YAMLConfigLoader.getBaseUrl();
     private static final String token = YAMLConfigLoader.getAuthToken();
     private static Header header;
-//    headers.("Authorization", "Bearer ");
     private Response response;
 
     @When("I send a GET request to {string} for id {int}")

@@ -12,10 +12,6 @@ public class AuthTokenManager {
     private static Instant expiry = null;
     private static final long REFRESH_BUFFER_SEC = 60;
 
-//    private static String username = System.getenv("QPIZZA_USER");getUsernameForToken
-//    private static String password = System.getenv("QPIZZA_PASSWORD");
-    //YAMLConfigLoader.getUsernameForToken()
-
     public static synchronized String getToken(String username, String password){
         if(accessToken==null || isExpired())
             refreshToken(username,password);
@@ -46,8 +42,6 @@ public class AuthTokenManager {
     private static String getCSRFToken(){
         Response response = RestAssured.given()
                 .post("https://quickpizza.grafana.com/api/csrf-token");
-
-//        Response response = ApiUtils.post("https://quickpizza.grafana.com","/api/csrf-token",null,null);
         return response.getCookie("csrf_token");
     }
 }
