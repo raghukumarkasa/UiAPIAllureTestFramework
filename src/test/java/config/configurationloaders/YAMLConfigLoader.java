@@ -20,6 +20,7 @@ public class YAMLConfigLoader {
         {
 //            InputStream in = YAMLConfigLoader.class.getClassLoader().getResourceAsStream("config.yaml");
             String content =  Files.readString(Paths.get("src/test/resources/config.yaml"));
+            System.out.println("Config File content before password replacement:\n"+content);
             content = replaceWithStaticEnvReferences(content);
             InputStream in = new ByteArrayInputStream(content.getBytes(StandardCharsets.UTF_8));
             Yaml yaml = new Yaml();
