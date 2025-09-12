@@ -37,6 +37,7 @@ public class YAMLConfigLoader {
     public static String getAuthToken(){
         String username = getUsernameForToken();
         String password = getPasswordForToken();
+        System.out.println("Username and password for token generation are: "+username+", "+password );
         return AuthTokenManager.getToken(username,password);
         //return config.get("QP_API_AUTH_TOKEN");
     }
