@@ -44,11 +44,13 @@ public class YAMLConfigLoader {
     }
 
     public static String getUsernameForToken(){;
-        return System.getenv("QP_API_TOKEN_USERNAME");
+       //return System.getenv("QP_API_TOKEN_USERNAME");
+        return config.get("QP_API_TOKEN_USERNAME");
     }
 
     public static String getPasswordForToken(){
-        return System.getenv("QP_API_TOKEN_PASSWORD");
+       //return System.getenv("QP_API_TOKEN_PASSWORD");
+        return config.get("QP_API_TOKEN_PASSWORD");
     }
 
     public static String replaceWithStaticEnvReferences(String input) {
