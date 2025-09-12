@@ -47,5 +47,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Publish Allure Report')
+            steps {
+                script {
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'target/allure-results']
+                }
+            }
     }
 }
