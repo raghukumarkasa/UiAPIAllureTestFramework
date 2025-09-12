@@ -29,7 +29,7 @@ pipeline {
                                         .replaceAll('\\$\\{QP_API_TOKEN_USERNAME}',API_TOKEN_USERNAME)
 
                             echo "Injected YAML content:\n${yamlText}"
-                            
+
                             //Overwrite the YAML file
                             writeFile file: "${env.YAML_PATH}", text: yamlText
                         }
